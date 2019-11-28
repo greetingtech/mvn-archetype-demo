@@ -1,0 +1,54 @@
+<archetype-descriptor
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
+        http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="archetype-demo">
+    <fileSets>
+        <!-- api -->
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>api/src/main/java</directory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+            <directory>api</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>api/src/test/java</directory>
+        </fileSet>
+        <fileSet filtered="false" packaged="false" encoding="UTF-8">
+            <directory>api/src/main/resources</directory>
+        </fileSet>
+
+        <!-- service -->
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>service/src/main/java</directory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+            <directory>service</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>service/src/test/java</directory>
+        </fileSet>
+        <fileSet filtered="false" packaged="false" encoding="UTF-8">
+            <directory>service/src/main/resources</directory>
+        </fileSet>
+    </fileSets>
+
+    <requiredProperties>
+        <requiredProperty key="package">
+            <defaultValue>${groupId}.project</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+</archetype-descriptor>
